@@ -48,16 +48,9 @@ namespace LinqExercise
                 Console.WriteLine(number);
             }
 
-            //TODO: Change the value at index 4 to your age, then print the numbers in descending order
-            Console.WriteLine("Adding age Desc:");
-            numbers[4] = 29;
-
-            var numbersDesc = numbers.OrderByDescending(x => x);
-
-            foreach(var number in numbersDesc)
-            {
-                Console.WriteLine(number);
-            }
+           //TODO: Change the value at index 4 to your age, then print the numbers in descending order
+	    Console.WriteLine("Adding age to index 4 and order DESC:");
+	    numbers.Select((number, index) => index == 4 ? 29 : number).OrderByDescending(x => x).ToList().ForEach(x => Console.WriteLine(x));
 
 			// List of employees ****Do not remove this****
 			var employees = CreateEmployees();
